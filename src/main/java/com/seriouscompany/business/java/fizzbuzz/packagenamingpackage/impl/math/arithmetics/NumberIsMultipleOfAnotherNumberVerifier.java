@@ -30,12 +30,10 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 		this.integerDivider = applicationContext.getBean(IntegerDivider.class);
 	}
 
-	/**
-	 * @param nFirstNumber
-	 * @param nSecondNumber
+
+	private static IntegerDivider integerDivider;\n\n\t@Autowired\n\tprivate ApplicationContextHolder applicationContextHolder;\n\n\t/**\n+	 * @return\n 	 */\n 	@PostConstruct\n 	public void init() {\n
 	 * @return
 	 */
-	public static boolean numberIsMultipleOfAnotherNumber(final int nFirstNumber, final int nSecondNumber) {
 		try {
 			final int nDivideFirstIntegerBySecondIntegerResult =
 					(NumberIsMultipleOfAnotherNumberVerifier.integerDivider.divide(nFirstNumber, nSecondNumber));

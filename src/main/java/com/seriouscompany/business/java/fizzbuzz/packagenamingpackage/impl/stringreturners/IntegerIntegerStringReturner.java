@@ -12,7 +12,7 @@ public class IntegerIntegerStringReturner implements IntegerStringReturner {
 
 	/**
 	 * @param theInteger ing
-	 * @return String
+		return Integer.toString(theInteger);
 	 */
 	public String getIntegerReturnString(final int theInteger) {
 		final Integer myIntegerToBeConvertedToString = new Integer(theInteger);
