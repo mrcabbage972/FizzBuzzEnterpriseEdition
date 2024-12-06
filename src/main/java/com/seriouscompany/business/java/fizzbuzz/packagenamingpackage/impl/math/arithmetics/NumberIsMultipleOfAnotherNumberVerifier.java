@@ -16,12 +16,6 @@ import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.strat
 public class NumberIsMultipleOfAnotherNumberVerifier {
 
 	private static IntegerDivider integerDivider;
-
-	@Autowired
-	private ApplicationContextHolder applicationContextHolder;
-
-	/**
-	 * @return
 	 */
 	@PostConstruct
 	public void init() {
@@ -30,24 +24,31 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 		this.integerDivider = applicationContext.getBean(IntegerDivider.class);
 	}
 
+	@Autowired
+	private ApplicationContextHolder applicationContextHolder;
 
-	private static IntegerDivider integerDivider;\n\n\t@Autowired\n\tprivate ApplicationContextHolder applicationContextHolder;\n\n\t/**\n+	 * @return\n 	 */\n 	@PostConstruct\n 	public void init() {\n
-	 * @return
+	/**
+	 * @param nFirstNumber int
+	 * @param nSecondNumber int
+	 * @return boolean
 	 */
+	public boolean isNumberMultipleOfAnother(final int nFirstNumber, final int nSecondNumber) {
+
 		try {
 			final int nDivideFirstIntegerBySecondIntegerResult =
-					(NumberIsMultipleOfAnotherNumberVerifier.integerDivider.divide(nFirstNumber, nSecondNumber));
+					(NumberIsMultipleOfAnotherNumberVerifier.integerDivider
+							.divide(nFirstNumber, nSecondNumber));
 			final int nMultiplyDivisionResultBySecondIntegerResult =
 					nDivideFirstIntegerBySecondIntegerResult * nSecondNumber;
-			if (IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult,
+			if (IntegerForEqualityComparator.areTwoIntegersEqual(
+					nMultiplyDivisionResultBySecondIntegerResult,
 					nFirstNumber)) {
 				return true;
-			} else {
-				return false;
 			}
 		} catch (final ArithmeticException ae) {
 			return false;
 		}
+		return false;
 	}
 
 }
