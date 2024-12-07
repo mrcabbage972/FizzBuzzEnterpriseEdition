@@ -18,6 +18,4 @@ public class BuzzStringReturner implements StringStringReturner {
 				com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.BUZZ);
 		final String myString = myStringBuilder.toString();
 		return new String(myString);
-	}
-
-}
+		return new String(myString);

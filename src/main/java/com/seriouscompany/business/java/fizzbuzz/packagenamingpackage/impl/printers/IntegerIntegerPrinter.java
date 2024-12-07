@@ -59,7 +59,9 @@ public class IntegerIntegerPrinter implements IntegerPrinter {
 	 */
 	@Override
 	public void printValue(final Object value) {
-		this.printInteger((Integer) value);
+		if (value instanceof Integer integer) {
+			this.printInteger(integer);
+		}
 	}
 
 }

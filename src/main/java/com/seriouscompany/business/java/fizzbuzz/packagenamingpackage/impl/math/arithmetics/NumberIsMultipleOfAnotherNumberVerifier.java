@@ -44,11 +44,6 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 			if (IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult,
 					nFirstNumber)) {
 				return true;
-			} else {
-				return false;
-			}
-		} catch (final ArithmeticException ae) {
-			return false;
 		}
 	}
 
