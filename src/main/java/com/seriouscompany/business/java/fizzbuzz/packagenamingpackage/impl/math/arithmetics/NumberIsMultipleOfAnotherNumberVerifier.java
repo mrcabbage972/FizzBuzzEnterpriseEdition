@@ -39,10 +39,6 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 		try {
 			final int nDivideFirstIntegerBySecondIntegerResult =
 					(NumberIsMultipleOfAnotherNumberVerifier.integerDivider.divide(nFirstNumber, nSecondNumber));
-			final int nMultiplyDivisionResultBySecondIntegerResult =
-					nDivideFirstIntegerBySecondIntegerResult * nSecondNumber;
-			return false;
-		}
 	}
 
 }
