@@ -16,7 +16,6 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 
 	private final LoopInitializer myLoopInitializer;
 	private final LoopFinalizer myLoopFinalizer;
-	private final LoopCondition myLoopCondition;
 	private final LoopStep myLoopStep;
 	private int myCurrentControlParameterValue;
 
