@@ -8,14 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.strategies.comparators.integercomparator.IntegerForEqualityComparator;
-
-/**
- * NumberIsMultipleOfAnotherNumberVerifier
- */
-@Service
 public class NumberIsMultipleOfAnotherNumberVerifier {
-
-	private static IntegerDivider integerDivider;
 19 |
 	@Autowired
 	private ApplicationContextHolder applicationContextHolder;
@@ -38,14 +31,11 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 	public static boolean numberIsMultipleOfAnotherNumber(final int nFirstNumber, final int nSecondNumber) {
 		try {
 			final int nDivideFirstIntegerBySecondIntegerResult =
-					(NumberIsMultipleOfAnotherNumberVerifier.integerDivider.divide(nFirstNumber, nSecondNumber));
+					integerDivider.divide(nFirstNumber, nSecondNumber);
 			final int nMultiplyDivisionResultBySecondIntegerResult =
 					nDivideFirstIntegerBySecondIntegerResult * nSecondNumber;
-			return IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult,
-					nFirstNumber);
-		} catch (final ArithmeticException ae) {
-			return false;
-		}
+			return IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult, nFirstNumber);
+		} catch (final ArithmeticException ae) { return false; }
 	}
 
 }
