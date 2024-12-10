@@ -38,9 +38,6 @@ public class BuzzStringPrinter implements StringPrinter {
 		final StringStringReturner myBuzzStringReturner = this._buzzStringReturnerFactory
 			.createStringStringReturner();
 		final FizzBuzzOutputStrategyToFizzBuzzExceptionSafeOutputStrategyAdapter myOutputAdapter =
-				new FizzBuzzOutputStrategyToFizzBuzzExceptionSafeOutputStrategyAdapter(
-		final FizzBuzzOutputStrategyToFizzBuzzExceptionSafeOutputStrategyAdapter myOutputAdapter =
-				new FizzBuzzOutputStrategyToFizzBuzzExceptionSafeOutputStrategyAdapter(this._outputStrategyFactory.createOutputStrategy());
 	}
 
 	/**
