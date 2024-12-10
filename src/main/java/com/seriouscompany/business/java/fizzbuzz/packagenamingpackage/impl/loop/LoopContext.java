@@ -44,7 +44,6 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 	/**
 	 * @return boolean
 	 */
-	@Override
 	}
 
 	/**
