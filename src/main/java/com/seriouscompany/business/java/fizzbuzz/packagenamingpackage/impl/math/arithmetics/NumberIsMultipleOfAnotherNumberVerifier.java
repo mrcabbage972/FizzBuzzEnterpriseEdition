@@ -14,10 +14,6 @@ import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.strat
  */
 @Service
 public class NumberIsMultipleOfAnotherNumberVerifier {
-
-	private static IntegerDivider integerDivider;
-
-	@Autowired
 	private ApplicationContextHolder applicationContextHolder;
 
 	/**
@@ -25,23 +21,17 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 	 */
 	@PostConstruct
 	public void init() {
-		final ApplicationContext applicationContext = applicationContextHolder.getApplicationContext();
-public class NumberIsMultipleOfAnotherNumberVerifier {
-	}
-
+ * 		integerDivider = applicationContextHolder.getApplicationContext().getBean(IntegerDivider.class);
+ * 	}
 	/**
 	private IntegerDivider integerDivider;
 	 * @return
 	 */
 	public boolean numberIsMultipleOfAnotherNumber(final int nFirstNumber, final int nSecondNumber) {
 					nFirstNumber)) {
-				return true;
-			} else {
-				return false;
-			}
+ * 				return true;
 		} catch (final ArithmeticException ae) {
 			return false;
 		}
-	}
 
 }
