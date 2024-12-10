@@ -18,16 +18,14 @@ public final class ThreeWayIntegerComparator {
 	 * @return ThreeWayIntegerComparisonResult
 	 */
 	public static ThreeWayIntegerComparisonResult Compare(final int nFirstInteger, final int nSecondInteger) {
-		if (nFirstInteger == nSecondInteger) {
+		if (nFirstInteger == nSecondInteger)
 			return ThreeWayIntegerComparisonResult.FirstEqualsSecond;
-		} else if (nFirstInteger < nSecondInteger) {
+		if (nFirstInteger < nSecondInteger)
 			return ThreeWayIntegerComparisonResult.FirstIsLessThanSecond;
-		} else if (nFirstInteger > nSecondInteger) {
+		if (nFirstInteger > nSecondInteger)
 			return ThreeWayIntegerComparisonResult.FirstIsGreaterThanSecond;
-		} else {
-			// If the integers cannot be compared, then something is seriously wrong with the numbers.
-			throw new UnsupportedOperationException(Constants.THE_INTEGERS_COULD_NOT_BE_COMPARED);
-		}
+		// If the integers cannot be compared, then something is seriously wrong with the numbers.
+		throw new UnsupportedOperationException(Constants.THE_INTEGERS_COULD_NOT_BE_COMPARED);
 	}
 
 }
