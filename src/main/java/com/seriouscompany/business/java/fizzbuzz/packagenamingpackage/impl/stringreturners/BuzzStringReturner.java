@@ -12,11 +12,9 @@ public class BuzzStringReturner implements StringStringReturner {
 
 	/**
 	 * @return String
+	 */
+	@Override
+	public String getStringFor(Integer number) {
 		return com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.BUZZ;
-	public String getReturnString() {
-				com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.BUZZ);
-		final String myString = myStringBuilder.toString();
-		return new String(myString);
 	}
-
 }
