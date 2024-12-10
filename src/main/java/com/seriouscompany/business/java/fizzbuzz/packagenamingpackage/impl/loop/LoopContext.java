@@ -18,7 +18,6 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 	private final LoopFinalizer myLoopFinalizer;
 	private final LoopCondition myLoopCondition;
 	private final LoopStep myLoopStep;
-	private int myCurrentControlParameterValue;
 
 	/**
 	 * @param nLoopControlParameterFinalValue int
@@ -27,13 +26,11 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 		super();
 		final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
 		final LoopComponentFactory myLoopComponentFactory = context.getBean(Constants.LOOP_COMPONENT_FACTORY,
-				LoopComponentFactory.class);
-		this.myLoopInitializer = myLoopComponentFactory.createLoopInitializer();
+				Constants.LOOP_COMPONENT_FACTORY, LoopComponentFactory.class);
 		this.myLoopFinalizer = myLoopComponentFactory.createLoopFinalizer(nLoopControlParameterFinalValue);
 		this.myLoopCondition = myLoopComponentFactory.createLoopCondition();
 		this.myLoopStep = myLoopComponentFactory.createLoopStep();
 		((ConfigurableApplicationContext) context).close();
-	}
 
 	/**
 	 * @return void
@@ -41,16 +38,13 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 	@Override
 	public void start() {
 		this.myCurrentControlParameterValue =
-				this.myLoopInitializer.getLoopInitializationPoint();
+				this.myLoopStep.getLoopInitializationPoint();
 	}
 
 	/**
 	 * @return boolean
 	 */
 	@Override
-	public boolean shouldProceed() {
-		return this.myLoopCondition.evaluateLoop(this.myCurrentControlParameterValue,
-				this.myLoopFinalizer.getLoopFinalizationPoint());
 	}
 
 	/**
@@ -59,7 +53,17 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 	@Override
 	public void proceed() {
 		this.myCurrentControlParameterValue =
-				this.myLoopStep.stepLoop(this.myCurrentControlParameterValue);
+				this.myLoopStep.stepForward(this.myCurrentControlParameterValue);
+	}
+
+	/**
+	 * @return void
+	 */
+	@Override
+	public void finish() {
+		this.myLoopFinalizer.finalizeLoop(this.myCurrentControlParameterValue);
+
+		((ConfigurableApplicationContext) this.context).close();
 	}
 
 	/**

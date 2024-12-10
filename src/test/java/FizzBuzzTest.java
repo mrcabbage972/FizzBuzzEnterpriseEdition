@@ -50,9 +50,7 @@ public class FizzBuzzTest {
 		final ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		final BufferedOutputStream bos = new BufferedOutputStream(baos);
 		System.setOut(new PrintStream(bos));
-
 		this.fb.fizzBuzz(n);
-
 		System.out.flush();
 		String platformDependentExpectedResult = s.replaceAll("\\n", System.getProperty("line.separator"));
 		assertEquals(platformDependentExpectedResult, baos.toString());

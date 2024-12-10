@@ -58,7 +58,7 @@ public class IntegerIntegerPrinter implements IntegerPrinter {
 	 * @param value
 	 */
 	@Override
-	public void printValue(final Object value) {
+	public void printValue(final Object value)  {
 		this.printInteger((Integer) value);
 	}
 

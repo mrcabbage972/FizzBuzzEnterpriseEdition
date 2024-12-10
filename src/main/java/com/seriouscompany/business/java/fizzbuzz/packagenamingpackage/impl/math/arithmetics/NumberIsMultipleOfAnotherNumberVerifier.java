@@ -26,22 +26,14 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 	@PostConstruct
 	public void init() {
 		final ApplicationContext applicationContext = applicationContextHolder.getApplicationContext();
-
-		this.integerDivider = applicationContext.getBean(IntegerDivider.class);
+public class NumberIsMultipleOfAnotherNumberVerifier {
 	}
 
 	/**
-	 * @param nFirstNumber
-	 * @param nSecondNumber
+	private IntegerDivider integerDivider;
 	 * @return
 	 */
-	public static boolean numberIsMultipleOfAnotherNumber(final int nFirstNumber, final int nSecondNumber) {
-		try {
-			final int nDivideFirstIntegerBySecondIntegerResult =
-					(NumberIsMultipleOfAnotherNumberVerifier.integerDivider.divide(nFirstNumber, nSecondNumber));
-			final int nMultiplyDivisionResultBySecondIntegerResult =
-					nDivideFirstIntegerBySecondIntegerResult * nSecondNumber;
-			if (IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult,
+	public boolean numberIsMultipleOfAnotherNumber(final int nFirstNumber, final int nSecondNumber) {
 					nFirstNumber)) {
 				return true;
 			} else {
