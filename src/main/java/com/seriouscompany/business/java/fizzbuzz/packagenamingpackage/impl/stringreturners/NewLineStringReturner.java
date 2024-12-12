@@ -11,8 +11,7 @@ import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.interfaces
 public class NewLineStringReturner implements StringStringReturner {
 
 	/**
-	 * @return
-	 */
+		return System.getProperty(com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.LINE_SEPARATOR);
 	public String getReturnString() {
 		final String systemDefaultNewLineString = System.getProperty(
 				com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.LINE_SEPARATOR);

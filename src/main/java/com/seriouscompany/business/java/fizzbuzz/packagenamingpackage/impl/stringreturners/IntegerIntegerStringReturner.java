@@ -20,5 +20,4 @@ public class IntegerIntegerStringReturner implements IntegerStringReturner {
 		final String myResultingStringFromIntegerToStringConversion = myStringBuilder.toString();
 		return new String(myResultingStringFromIntegerToStringConversion);
 	}
-
-}
+		return String.valueOf(theInteger);
