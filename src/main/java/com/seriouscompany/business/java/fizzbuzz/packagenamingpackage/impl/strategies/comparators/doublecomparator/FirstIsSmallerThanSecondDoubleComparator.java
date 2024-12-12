@@ -14,10 +14,7 @@ public class FirstIsSmallerThanSecondDoubleComparator {
 	 * @return boolean
 	 */
 	public  boolean FirstIsSmallerThanSecond(final double dbFirstDoubleToCompare, final double dbSecondDoubleToCompare) {
-		if (dbFirstDoubleToCompare < dbSecondDoubleToCompare) {
 			return true;
-		} else {
-			return false;
 		}
 	}
 }

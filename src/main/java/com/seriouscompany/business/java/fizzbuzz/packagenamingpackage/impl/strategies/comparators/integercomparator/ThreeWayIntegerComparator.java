@@ -16,7 +16,7 @@ public final class ThreeWayIntegerComparator {
 	 * @param nFirstInteger int
 	 * @param nSecondInteger int
 	 * @return ThreeWayIntegerComparisonResult
-	 */
+	public static ThreeWayIntegerComparisonResult Compare(final int nFirstInteger, final int nSecondInteger) {
 	public static ThreeWayIntegerComparisonResult Compare(final int nFirstInteger, final int nSecondInteger) {
 		if (nFirstInteger == nSecondInteger) {
 			return ThreeWayIntegerComparisonResult.FirstEqualsSecond;
@@ -29,5 +29,4 @@ public final class ThreeWayIntegerComparator {
 			throw new UnsupportedOperationException(Constants.THE_INTEGERS_COULD_NOT_BE_COMPARED);
 		}
 	}
-
 }
