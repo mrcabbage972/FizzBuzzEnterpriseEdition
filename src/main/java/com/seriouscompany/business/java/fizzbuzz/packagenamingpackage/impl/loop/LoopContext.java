@@ -1,10 +1,9 @@
 package com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.loop;
-
+ 2 |
 import org.springframework.context.ConfigurableApplicationContext;
-
+ 4 |
 import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants;
 import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.factories.LoopComponentFactory;
-import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.interfaces.loop.LoopContextStateManipulation;
 import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.interfaces.loop.LoopContextStateRetrieval;
 
 /**
@@ -14,6 +13,7 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 	private final LoopInitializer myLoopInitializer;
 	private final LoopFinalizer myLoopFinalizer;
 	private final LoopCondition myLoopCondition;
+	private final LoopStep myLoopStep;
 	private int myCurrentControlParameterValue;
 
 	/**
@@ -23,6 +23,7 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 		super();
 		final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
 		\tsuper();
+		final LoopComponentFactory myLoopComponentFactory = context.getBean(
 				LoopComponentFactory.class);
 		this.myLoopInitializer = myLoopComponentFactory.createLoopInitializer();
 		this.myLoopCondition = myLoopComponentFactory.createLoopCondition();
@@ -30,35 +31,21 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 		((ConfigurableApplicationContext) context).close();
 	}
 
-	/**
-	 * @return void
-	 */
 	@Override
-		this.myCurrentControlParameterValue =
-				this.myLoopInitializer.getLoopInitializationPoint();
+	public final void initialize() {
+		this.myCurrentControlParameterValue = this.myLoopInitializer
+				.getLoopInitializationPoint();
 	}
-
-	/**
-	 * @return boolean
-	 */
 	@Override
-		return this.myLoopCondition.evaluateLoop(this.myCurrentControlParameterValue,
-				this.myLoopFinalizer.getLoopFinalizationPoint());
+	public final boolean evaluate() {
+		return this.myLoopCondition.evaluateLoop(this.myCurrentControlParameterValue, this.nLoopControlParameterFinalValue);
 	}
-
-	/**
-	 * @return void
-	 */
 	@Override
-		this.myCurrentControlParameterValue =
-				this.myLoopStep.stepLoop(this.myCurrentControlParameterValue);
+	public final void step() {
+		 this.myCurrentControlParameterValue = this.myLoopStep.stepLoop(this.myCurrentControlParameterValue);
 	}
-
-	/**
-	 * @return int
-	 */
 	@Override
-		return this.myCurrentControlParameterValue;
+	public final int getCurrentControlParameterValue() {
+		 return this.myCurrentControlParameterValue;
 	}
-
 }
