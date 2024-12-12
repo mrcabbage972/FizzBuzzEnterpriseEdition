@@ -23,12 +23,11 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 		super();
 		final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
 		\tsuper();
-		final LoopComponentFactory myLoopComponentFactory = context.getBean(
-				LoopComponentFactory.class);
+		final LoopComponentFactory myLoopComponentFactory = context.getBean(LoopComponentFactory.class);
 		this.myLoopInitializer = myLoopComponentFactory.createLoopInitializer();
 		this.myLoopCondition = myLoopComponentFactory.createLoopCondition();
 		this.myLoopStep = myLoopComponentFactory.createLoopStep();
-		((ConfigurableApplicationContext) context).close();
+		\t((ConfigurableApplicationContext) context).close();
 	}
 
 	@Override
