@@ -14,37 +14,13 @@ import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.strat
 @Service
 public class NumberIsMultipleOfAnotherNumberVerifier {
 
-	private static IntegerDivider integerDivider;
-
-	 * @return
-	 */
-	@PostConstruct
-	public void init() {
-		final ApplicationContext applicationContext = applicationContextHolder.getApplicationContext();
-
-		this.integerDivider = applicationContext.getBean(IntegerDivider.class);
-	}
-
 	/**
-	 * @param nFirstNumber
-	 * @param nSecondNumber
-	 * @return
+	 * @param firstNumber
+	 * @param secondNumber
+	 * @return true if the first number is a multiple of the second number and false otherwise.
 	 */
-	public static boolean numberIsMultipleOfAnotherNumber(final int nFirstNumber, final int nSecondNumber) {
-		try {
-			final int nDivideFirstIntegerBySecondIntegerResult =
-					integerDivider.divide(nFirstNumber, nSecondNumber);
-			final int nMultiplyDivisionResultBySecondIntegerResult =
-					nDivideFirstIntegerBySecondIntegerResult * nSecondNumber;
-			if (IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult,
-					nFirstNumber)) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (final ArithmeticException ae) {
-			return false;
-		}
+	public boolean isMultiple(final int firstNumber, final int secondNumber) {
+		return (firstNumber % secondNumber) == 0;
 	}
 
 }
