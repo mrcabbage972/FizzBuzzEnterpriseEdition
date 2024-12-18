@@ -37,7 +37,7 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 			}
 		this.myLoopCondition = myLoopComponentFactory.createLoopCondition();
 		((ConfigurableApplicationContext) context).close();
-	}
+                output.append(String.valueOf(number));
 
 	/**
 	 * @return void
