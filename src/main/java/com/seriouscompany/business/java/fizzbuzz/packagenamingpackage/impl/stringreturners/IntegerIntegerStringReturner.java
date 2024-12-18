@@ -15,9 +15,7 @@ public class IntegerIntegerStringReturner implements IntegerStringReturner {
 	 * @return String
 	 */
 	public String getIntegerReturnString(final int theInteger) {
-		final Integer myIntegerToBeConvertedToString = new Integer(theInteger);
-		final StringBuilder myStringBuilder = new StringBuilder(myIntegerToBeConvertedToString.toString());
-		final String myResultingStringFromIntegerToStringConversion = myStringBuilder.toString();
+		final String myResultingStringFromIntegerToStringConversion = String.format("%s", theInteger);
 		return new String(myResultingStringFromIntegerToStringConversion);
 	}
 

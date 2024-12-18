@@ -17,21 +17,25 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 	private final LoopInitializer myLoopInitializer;
 	private final LoopFinalizer myLoopFinalizer;
 	private final LoopCondition myLoopCondition;
-	private final LoopStep myLoopStep;
 	private int myCurrentControlParameterValue;
 
 	/**
-	 * @param nLoopControlParameterFinalValue int
 	 */
 	public LoopContext(final int nLoopControlParameterFinalValue) {
 		super();
-		final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
 		final LoopComponentFactory myLoopComponentFactory = context.getBean(Constants.LOOP_COMPONENT_FACTORY,
 				LoopComponentFactory.class);
 		this.myLoopInitializer = myLoopComponentFactory.createLoopInitializer();
 		this.myLoopFinalizer = myLoopComponentFactory.createLoopFinalizer(nLoopControlParameterFinalValue);
+		if (this.applicationContext != null) {
+			try {
+				this.applicationContext.close();
+			} catch (final Exception exceptionFromClosing) {
+				// We're the enterprise...we don't get exceptions!
+			} catch (final Throwable throwableFromClosing) {
+				// We're the enterprise...we don't get throwables either!
+			}
 		this.myLoopCondition = myLoopComponentFactory.createLoopCondition();
-		this.myLoopStep = myLoopComponentFactory.createLoopStep();
 		((ConfigurableApplicationContext) context).close();
 	}
 

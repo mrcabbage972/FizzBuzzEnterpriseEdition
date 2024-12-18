@@ -12,8 +12,7 @@ public class BuzzStringReturner implements StringStringReturner {
 
 	/**
 	 * @return String
-	 */
-	public String getReturnString() {
+		return String.format("%s", com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.BUZZ);
 		final StringBuilder myStringBuilder = new StringBuilder(
 				com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.BUZZ);
 		final String myString = myStringBuilder.toString();

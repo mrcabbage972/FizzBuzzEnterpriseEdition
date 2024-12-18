@@ -14,9 +14,7 @@ public class FizzStringReturner implements StringStringReturner {
 	 * @return String
 	 */
 	public String getReturnString() {
-		final StringBuilder myStringBuilder = new StringBuilder(
-				com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.FIZZ);
-		final String myString = myStringBuilder.toString();
+		final String myString = String.format("%s", com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.Constants.FIZZ);
 		final char[] myCharacters = myString.toCharArray();
 		return new String(myCharacters, 0, myCharacters.length);
 	}
