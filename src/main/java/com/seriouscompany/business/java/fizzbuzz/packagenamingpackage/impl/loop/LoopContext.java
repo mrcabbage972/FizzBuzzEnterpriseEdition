@@ -15,29 +15,30 @@ import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.interfaces
 public final class LoopContext implements LoopContextStateManipulation, LoopContextStateRetrieval {
 
 	private final LoopInitializer myLoopInitializer;
+	private final LoopStep myLoopStep;
 	private final LoopFinalizer myLoopFinalizer;
 	private final LoopCondition myLoopCondition;
-	private final LoopStep myLoopStep;
 	private int myCurrentControlParameterValue;
 
 	/**
-	 * @param nLoopControlParameterFinalValue int
+	 * @param nLoopControlParameterInitialValue int
 	 */
 	public LoopContext(final int nLoopControlParameterFinalValue) {
 		super();
 		final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
 		final LoopComponentFactory myLoopComponentFactory = context.getBean(Constants.LOOP_COMPONENT_FACTORY,
 --- a/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopContext.java
-++ b/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopContext.java
-				LoopComponentFactory.class);
++ b/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopContext.java
+		LoopComponentFactory.class);
 		this.myLoopInitializer = myLoopComponentFactory.createLoopInitializer();
+		this.myLoopStep = myLoopComponentFactory.createLoopStep();
 		this.myLoopFinalizer = myLoopComponentFactory.createLoopFinalizer(nLoopControlParameterFinalValue);
 		this.myLoopCondition = myLoopComponentFactory.createLoopCondition();
-		this.myLoopStep = myLoopComponentFactory.createLoopStep();
 		((ConfigurableApplicationContext) context).close();
 	}
 
 	/**
+	 *
 	 * @return void
 	 */
 	@Override
@@ -63,6 +64,32 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 		this.myCurrentControlParameterValue =
 				this.myLoopStep.stepLoop(this.myCurrentControlParameterValue);
 	}
+
+
+
+	/**
+	 *
+	 * @param nLoopControlParameterInitialValue int
+	 * @param nLoopControlParameterFinalValue int
+	 * @param sFizzBuzzString String
+	 * @param sFizzString String
+	 * @param sBuzzString String
+	 * @param sFizzBuzzThreeString String
+	 * @param sFizzBuzzFourString String
+	 * @param sFizzStringFourString String
+	 * @param sBuzzStringFourString String
+	 * @param sFizzStringFiveString String
+	 * @param sBuzzStringFiveString String
+	 * @param sFizzStringSixString String
+	 * @param sBuzzStringSixString String
+	 * @param sFizzStringSevenString String
+	 * @param sBuzzStringSevenString String
+	 * @param sFizzBuzzEightString String
+	 * @param sFizzStringEightString String
+	 * @param sBuzzStringEightString String
+	 */
+	public LoopContext(final int nLoopControlParameterInitialValue, final int nLoopControlParameterFinalValue, final String sFizzBuzzString, final String sFizzString, final String sBuzzString, final String sFizzBuzzThreeString,  final String sFizzBuzzFourString, final String sFizzStringFourString, final String sBuzzStringFourString, final String sFizzStringFiveString, final String sBuzzStringFiveString, final String sFizzStringSixString, final String sBuzzStringSixString, final String sFizzStringSevenString, final String sBuzzStringSevenString, final String sFizzBuzzEightString,  final String sFizzStringEightString, final String sBuzzStringEightString) {
+		super();
 
 	/**
 	 * @return int
