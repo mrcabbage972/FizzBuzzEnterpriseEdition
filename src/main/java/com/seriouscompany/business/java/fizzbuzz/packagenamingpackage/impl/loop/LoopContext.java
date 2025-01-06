@@ -27,9 +27,9 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 		super();
 		final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
 		final LoopComponentFactory myLoopComponentFactory = context.getBean(Constants.LOOP_COMPONENT_FACTORY,
---- a/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopContext.java
-+ b/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopContext.java
 		LoopComponentFactory.class);
+
+
 		this.myLoopInitializer = myLoopComponentFactory.createLoopInitializer();
 		this.myLoopStep = myLoopComponentFactory.createLoopStep();
 		this.myLoopFinalizer = myLoopComponentFactory.createLoopFinalizer(nLoopControlParameterFinalValue);
@@ -89,7 +89,7 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 	 * @param sBuzzStringEightString String
 	 */
 	public LoopContext(final int nLoopControlParameterInitialValue, final int nLoopControlParameterFinalValue, final String sFizzBuzzString, final String sFizzString, final String sBuzzString, final String sFizzBuzzThreeString,  final String sFizzBuzzFourString, final String sFizzStringFourString, final String sBuzzStringFourString, final String sFizzStringFiveString, final String sBuzzStringFiveString, final String sFizzStringSixString, final String sBuzzStringSixString, final String sFizzStringSevenString, final String sBuzzStringSevenString, final String sFizzBuzzEightString,  final String sFizzStringEightString, final String sBuzzStringEightString) {
-		super();
+		this(nLoopControlParameterFinalValue);
 
 	/**
 	 * @return int
