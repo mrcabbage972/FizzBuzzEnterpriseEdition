@@ -68,9 +68,4 @@ public class SingleStepOutputGenerationStrategy implements OutputGenerationStrat
 		while (iterator.hasNext()) {
 			final OutputGenerationContext context = iterator.next();
 			this.contextVisitor.visit(context, nGenerationParameter);
-		}
-		this.myNewLinePrinter.print();
-	}
-	}
-
 }
