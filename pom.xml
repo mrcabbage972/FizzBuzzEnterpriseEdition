@@ -18,33 +18,33 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.8.2</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-aop</artifactId>
-        <version>3.2.13.RELEASE</version>
+        <version>6.2.1</version>
     </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-beans</artifactId>
-        <version>3.2.13.RELEASE</version>
+        <version>6.2.1</version>
     </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
-        <version>3.2.13.RELEASE</version>
+        <version>6.2.1</version>
     </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
-        <version>3.2.13.RELEASE</version>
+        <version>6.2.1</version>
     </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-expression</artifactId>
-        <version>3.2.13.RELEASE</version>
+        <version>6.2.1</version>
     </dependency>
   </dependencies>
 
@@ -58,7 +58,7 @@
     <plugins>
       <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3</version>
+          <version>3.11.0</version>
           <configuration>
           <source>1.7</source>
           <target>1.7</target>
@@ -79,7 +79,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.5.8.201207111220</version>
+        <version>0.8.12</version>
         <executions>
           <execution>
             <goals>
