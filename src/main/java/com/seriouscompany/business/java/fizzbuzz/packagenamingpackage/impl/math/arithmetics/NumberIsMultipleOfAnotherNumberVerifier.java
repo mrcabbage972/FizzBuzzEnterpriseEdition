@@ -18,7 +18,6 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 	private static IntegerDivider integerDivider;
 
 	@Autowired
-	private ApplicationContextHolder applicationContextHolder;
 
 	/**
 	 * @return
@@ -26,9 +25,8 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 	@PostConstruct
 	public void init() {
 		final ApplicationContext applicationContext = applicationContextHolder.getApplicationContext();
-
 		this.integerDivider = applicationContext.getBean(IntegerDivider.class);
-	}
+		}
 
 	/**
 	 * @param nFirstNumber
@@ -38,15 +36,11 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 	public static boolean numberIsMultipleOfAnotherNumber(final int nFirstNumber, final int nSecondNumber) {
 		try {
 			final int nDivideFirstIntegerBySecondIntegerResult =
-					(NumberIsMultipleOfAnotherNumberVerifier.integerDivider.divide(nFirstNumber, nSecondNumber));
+					NumberIsMultipleOfAnotherNumberVerifier.integerDivider.divide(nFirstNumber, nSecondNumber);
 			final int nMultiplyDivisionResultBySecondIntegerResult =
 					nDivideFirstIntegerBySecondIntegerResult * nSecondNumber;
-			if (IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult,
-					nFirstNumber)) {
-				return true;
-			} else {
-				return false;
-			}
+			return IntegerForEqualityComparator.areTwoIntegersEqual(nMultiplyDivisionResultBySecondIntegerResult,
+					nFirstNumber);
 		} catch (final ArithmeticException ae) {
 			return false;
 		}

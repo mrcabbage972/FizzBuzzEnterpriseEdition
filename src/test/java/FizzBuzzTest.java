@@ -54,7 +54,7 @@ public class FizzBuzzTest {
 		this.fb.fizzBuzz(n);
 
 		System.out.flush();
-		String platformDependentExpectedResult = s.replaceAll("\\n", System.getProperty("line.separator"));
+		String platformDependentExpectedResult = s.replaceAll("\\\\n", System.getProperty("line.separator"));
 		assertEquals(platformDependentExpectedResult, baos.toString());
 	}
 
@@ -76,7 +76,7 @@ public class FizzBuzzTest {
 		this.doFizzBuzz(TestConstants.INT_10, TestConstants._1_2_FIZZ_4_BUZZ_FIZZ_7_8_FIZZ_BUZZ);
 		this.doFizzBuzz(TestConstants.INT_11, TestConstants._1_2_FIZZ_4_BUZZ_FIZZ_7_8_FIZZ_BUZZ_11);
 		this.doFizzBuzz(TestConstants.INT_12, TestConstants._1_2_FIZZ_4_BUZZ_FIZZ_7_8_FIZZ_BUZZ_11_FIZZ);
-		this.doFizzBuzz(TestConstants.INT_13, TestConstants._1_2_FIZZ_4_BUZZ_FIZZ_7_8_FIZZ_BUZZ_11_FIZZ_13);
+	@Test
 		this.doFizzBuzz(TestConstants.INT_14, TestConstants._1_2_FIZZ_4_BUZZ_FIZZ_7_8_FIZZ_BUZZ_11_FIZZ_13_14);
 		this.doFizzBuzz(TestConstants.INT_15,
 				TestConstants._1_2_FIZZ_4_BUZZ_FIZZ_7_8_FIZZ_BUZZ_11_FIZZ_13_14_FIZZ_BUZZ);
