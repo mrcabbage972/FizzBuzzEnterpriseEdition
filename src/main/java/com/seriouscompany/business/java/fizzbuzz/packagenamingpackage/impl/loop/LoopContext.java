@@ -27,6 +27,8 @@ public final class LoopContext implements LoopContextStateManipulation, LoopCont
 		super();
 		final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
 		final LoopComponentFactory myLoopComponentFactory = context.getBean(Constants.LOOP_COMPONENT_FACTORY,
+--- a/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopContext.java
+++ b/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopContext.java
 				LoopComponentFactory.class);
 		this.myLoopInitializer = myLoopComponentFactory.createLoopInitializer();
 		this.myLoopFinalizer = myLoopComponentFactory.createLoopFinalizer(nLoopControlParameterFinalValue);

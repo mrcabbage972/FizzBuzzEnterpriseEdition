@@ -13,7 +13,7 @@ public class FirstIsLargerThanSecondDoubleComparator {
 	 * @param dbSecondDoubleToCompare double
 	 * @return boolean
 	 */
-	public  boolean FirstIsLargerThanSecond(final double dbFirstDoubleToCompare, final double dbSecondDoubleToCompare) {
+	public boolean FirstIsLargerThanSecond(double dbFirstDoubleToCompare, double dbSecondDoubleToCompare) {
 		if (dbFirstDoubleToCompare > dbSecondDoubleToCompare) {
 			return true;
 		} else {

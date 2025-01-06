@@ -15,7 +15,7 @@ public final class IntegerForEqualityComparator {
 	 * @param nSecondInteger int
 	 * @return boolean
 	 */
-	public static boolean areTwoIntegersEqual(final int nFirstInteger, final int nSecondInteger) {
+	public boolean areTwoIntegersEqual(final int nFirstInteger, final int nSecondInteger) {
 		final ThreeWayIntegerComparisonResult comparisonResult =
 				ThreeWayIntegerComparator.Compare(nFirstInteger, nSecondInteger);
 		if (ThreeWayIntegerComparisonResult.FirstEqualsSecond == comparisonResult) {

@@ -37,8 +37,8 @@ public class IntegerDivider {
 	 * @return int
 	 */
 	public int divide(final int nFirstInteger, final int nSecondInteger) {
-		final boolean denominatorEqualsZero =
-				IntegerForEqualityComparator.areTwoIntegersEqual(nSecondInteger, Constants.INTEGER_DIVIDE_ZERO_VALUE);
+		final boolean denominatorEqualsZero = IntegerForEqualityComparator.areTwoIntegersEqual(nSecondInteger,
+				Constants.INTEGER_DIVIDE_ZERO_VALUE);
 		if (denominatorEqualsZero) {
 			throw new ArithmeticException(Constants.AN_ATTEMPT_WAS_MADE_TO_DIVIDE_BY_ZERO);
 		} else {

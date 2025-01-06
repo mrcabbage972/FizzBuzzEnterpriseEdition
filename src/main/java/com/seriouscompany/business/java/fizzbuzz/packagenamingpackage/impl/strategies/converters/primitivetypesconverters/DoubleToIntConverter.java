@@ -14,7 +14,7 @@ public final class DoubleToIntConverter {
 	 * @param dbDoubleToConvert double
 	 * @return int
 	 */
-	public static int Convert(final double dbDoubleToConvert) {
+	public int Convert(final double dbDoubleToConvert) {
 		final int nConversionResult = (int) dbDoubleToConvert;
 		return nConversionResult;
 	}

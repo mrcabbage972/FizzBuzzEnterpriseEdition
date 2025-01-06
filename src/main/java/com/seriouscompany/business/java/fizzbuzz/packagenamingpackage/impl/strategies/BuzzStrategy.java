@@ -17,12 +17,7 @@ public class BuzzStrategy implements IsEvenlyDivisibleStrategy {
 	 * @return boolean
 	 */
 	public boolean isEvenlyDivisible(final int theInteger) {
-		if (NumberIsMultipleOfAnotherNumberVerifier.numberIsMultipleOfAnotherNumber(theInteger,
-				BuzzStrategyConstants.BUZZ_INTEGER_CONSTANT_VALUE)) {
-			return true;
-		} else {
-			return false;
-		}
+		return NumberIsMultipleOfAnotherNumberVerifier.numberIsMultipleOfAnotherNumber(theInteger, BuzzStrategyConstants.BUZZ_INTEGER_CONSTANT_VALUE);
 	}
 
 }

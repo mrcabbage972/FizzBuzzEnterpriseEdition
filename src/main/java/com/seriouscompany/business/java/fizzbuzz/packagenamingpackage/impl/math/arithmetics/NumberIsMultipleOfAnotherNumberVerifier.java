@@ -18,7 +18,7 @@ public class NumberIsMultipleOfAnotherNumberVerifier {
 	private static IntegerDivider integerDivider;
 
 	@Autowired
-	private ApplicationContextHolder applicationContextHolder;
+    private ApplicationContextHolder applicationContextHolder;
 
 	/**
 	 * @return
