@@ -64,7 +64,7 @@ public class SingleStepOutputGenerationStrategy implements OutputGenerationStrat
 	 * @return void
 	 */
 	public void performGenerationForCurrentStep(final SingleStepOutputGenerationParameter generationParameter) {\n
-		final int nGenerationParameter = generationParameter.retrieveIntegerValue();
+		final int nGenerationParameter = generationParameter.retrieveIntegerValue();\n
 		final Iterator<OutputGenerationContext> iterator = this.contexts.iterator();
 		while (iterator.hasNext()) {
 			final OutputGenerationContext context = iterator.next();
